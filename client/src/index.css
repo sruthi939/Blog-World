@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+*{
+    font-family: "Outfit", sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@theme {
+    --color-primary: #5044E5;
+    --color-gold: #E5B85C;
+}
+
+body {
+    background-color: #303030;
+    color: white;
+    min-height: 100vh;
+}
+
+.bg-dot-pattern {
+    background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(180deg, #404040 0%, #303030 50%, #909090 100%);
+    background-size: 30px 30px, 100% 100%;
+    background-attachment: fixed;
+}
