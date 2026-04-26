@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const clientDir = path.join(__dirname, 'client', 'src');
+const clientDir = path.join(__dirname, '..', 'client', 'src');
 
 // Colors used: 
 // 1. Base: #0B0E14
