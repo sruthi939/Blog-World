@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@source "./pages/**/*.{js,jsx}";
+@source "./components/**/*.{js,jsx}";
 
 *{
     font-family: "Outfit", sans-serif;
@@ -15,9 +17,9 @@
 }
 
 body {
-    background-color: #303030;
     color: white;
     min-height: 100vh;
+    margin: 0;
 }
 
 .bg-dot-pattern {

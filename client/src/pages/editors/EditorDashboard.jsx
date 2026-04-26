@@ -1,6 +1,6 @@
 import React from 'react';
-import EditorSidebar from '../../components/editor/EditorSidebar';
-import EditorNavbar from '../../components/editor/EditorNavbar';
+import EditorSidebar from '../../components/editors/EditorSidebar';
+import EditorNavbar from '../../components/editors/EditorNavbar';
 
 const EditorDashboard = () => {
   return (

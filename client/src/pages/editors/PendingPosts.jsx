@@ -1,6 +1,6 @@
 import React from 'react';
-import EditorSidebar from '../../components/editor/EditorSidebar';
-import PostTable from '../../components/editor/PostTable';
+import EditorSidebar from '../../components/editors/EditorSidebar';
+import PostTable from '../../components/editors/PostTable';
 
 const PendingPosts = () => {
   return (

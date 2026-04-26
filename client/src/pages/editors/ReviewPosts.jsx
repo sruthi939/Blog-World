@@ -1,6 +1,6 @@
 import React from 'react';
-import EditorSidebar from '../../components/editor/EditorSidebar';
-import ReviewCard from '../../components/editor/ReviewCard';
+import EditorSidebar from '../../components/editors/EditorSidebar';
+import ReviewCard from '../../components/editors/ReviewCard';
 
 const ReviewPosts = () => {
   return (
