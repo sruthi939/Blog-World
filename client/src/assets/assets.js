@@ -9,12 +9,12 @@ import blog_pic_8 from './blog_pic_8.png';
 import blog_pic_9 from './blog_pic_9.png';
 import blog_pic_10 from './blog_pic_10.png';
 import logo from './logo.png';
-import header_image from './header_image.png';
+import hero_image from './hero_image.png';
 
 export const assets = {
 
     logo,
-    header_image,
+    hero_image,
 
 }
 export const blogCategories = ['All', 'Technology', 'Startup', 'Lifestyle', 'Finance']
