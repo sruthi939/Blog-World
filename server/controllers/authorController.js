@@ -1,0 +1,2 @@
+exports.getProfile = async (req, res) => { res.json({ success: true, message: 'Get author profile' }); };
+exports.updateProfile = async (req, res) => { res.json({ success: true, message: 'Update author profile' }); };
