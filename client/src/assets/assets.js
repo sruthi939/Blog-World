@@ -8,55 +8,14 @@ import blog_pic_7 from './blog_pic_7.png';
 import blog_pic_8 from './blog_pic_8.png';
 import blog_pic_9 from './blog_pic_9.png';
 import blog_pic_10 from './blog_pic_10.png';
-import facebook_icon from './facebook_icon.svg'
-import googleplus_icon from './googleplus_icon.svg'
-import twitter_icon from './twitter_icon.svg'
-import logo from './logo.svg'
-import arrow from './arrow.svg'
-import logo_light from './logo_light.svg'
-import blog_icon from './blog_icon.png'
-import add_icon from './add_icon.svg'
-import list_icon from './list_icon.svg'
-import email_icon from './email_icon.png'
-import upload_area from './upload_area.svg'
-import user_icon from './user_icon.svg'
-import bin_icon from './bin_icon.svg'
-import comment_icon from './comment_icon.svg'
-import tick_icon from './tick_icon.svg'
-import star_icon from './star_icon.svg'
-import cross_icon from './cross_icon.svg'
-import home_icon from './home_icon.svg'
-import gradientBackground from './gradientBackground.png'
-import dashboard_icon_1 from './dashboard_icon_1.svg'
-import dashboard_icon_2 from './dashboard_icon_2.svg'
-import dashboard_icon_3 from './dashboard_icon_3.svg'
-import dashboard_icon_4 from './dashboard_icon_4.svg'
-
+import logo from './logo.png';
+import header_image from './header_image.png';
 
 export const assets = {
-    facebook_icon,
-    googleplus_icon,
-    twitter_icon,
+
     logo,
-    arrow,
-    logo_light,
-    blog_icon,
-    add_icon,
-    email_icon,
-    upload_area,
-    user_icon,
-    bin_icon,
-    comment_icon,
-    tick_icon,
-    star_icon,
-    home_icon,
-    gradientBackground,
-    list_icon,
-    cross_icon,
-    dashboard_icon_1,
-    dashboard_icon_2,
-    dashboard_icon_3,
-    dashboard_icon_4,
+    header_image,
+
 }
 export const blogCategories = ['All', 'Technology', 'Startup', 'Lifestyle', 'Finance']
 
@@ -184,57 +143,57 @@ export const blog_data = [
 ]
 
 export const comments_data = [
-        {
-            "_id": "6811ed9e7836a82ba747cb25",
-            "blog": blog_data[0],
-            "name": "Michael Scott",
-            "content": "This is my new comment",
-            "isApproved": false,
-            "createdAt": "2025-04-30T09:30:06.918Z",
-            "updatedAt": "2025-04-30T09:30:06.918Z",
-            "__v": 0
-        },
-        {
-            "_id": "6810a752fbb942aa7cbf4adb",
-            "blog": blog_data[1],
-            "name": "John Doe",
-            "content": "This is a nice blog",
-            "isApproved": false,
-            "createdAt": "2025-04-29T10:17:54.832Z",
-            "updatedAt": "2025-04-29T10:17:54.832Z",
-            "__v": 0
-        },
-        {
-            "_id": "680779aebef75c08f8b4898f",
-            "blog": blog_data[2],
-            "name": "Jack London",
-            "content": "Hi this blog is must to read",
-            "isApproved": true,
-            "createdAt": "2025-04-22T11:12:46.547Z",
-            "updatedAt": "2025-04-22T11:13:10.015Z",
-            "__v": 0
-        },
-        {
-            "_id": "680770aeb2897e5c28bf9b26",
-            "blog": blog_data[3],
-            "name": "Sam Smith",
-            "content": "This is the best blog, everybody should read it",
-            "isApproved": false,
-            "createdAt": "2025-04-22T10:34:22.020Z",
-            "updatedAt": "2025-04-22T10:34:22.020Z",
-            "__v": 0
-        },
-        {
-            "_id": "68076468e32055c94a696cf5",
-            "blog": blog_data[4],
-            "name": "Peter Lawrence",
-            "content": "Honestly, I did not expect this to work, but it totally did. Saved my project!",
-            "isApproved": true,
-            "createdAt": "2025-04-22T09:42:00.444Z",
-            "updatedAt": "2025-04-22T10:24:55.626Z",
-            "__v": 0
-        }
-    ]
+    {
+        "_id": "6811ed9e7836a82ba747cb25",
+        "blog": blog_data[0],
+        "name": "Michael Scott",
+        "content": "This is my new comment",
+        "isApproved": false,
+        "createdAt": "2025-04-30T09:30:06.918Z",
+        "updatedAt": "2025-04-30T09:30:06.918Z",
+        "__v": 0
+    },
+    {
+        "_id": "6810a752fbb942aa7cbf4adb",
+        "blog": blog_data[1],
+        "name": "John Doe",
+        "content": "This is a nice blog",
+        "isApproved": false,
+        "createdAt": "2025-04-29T10:17:54.832Z",
+        "updatedAt": "2025-04-29T10:17:54.832Z",
+        "__v": 0
+    },
+    {
+        "_id": "680779aebef75c08f8b4898f",
+        "blog": blog_data[2],
+        "name": "Jack London",
+        "content": "Hi this blog is must to read",
+        "isApproved": true,
+        "createdAt": "2025-04-22T11:12:46.547Z",
+        "updatedAt": "2025-04-22T11:13:10.015Z",
+        "__v": 0
+    },
+    {
+        "_id": "680770aeb2897e5c28bf9b26",
+        "blog": blog_data[3],
+        "name": "Sam Smith",
+        "content": "This is the best blog, everybody should read it",
+        "isApproved": false,
+        "createdAt": "2025-04-22T10:34:22.020Z",
+        "updatedAt": "2025-04-22T10:34:22.020Z",
+        "__v": 0
+    },
+    {
+        "_id": "68076468e32055c94a696cf5",
+        "blog": blog_data[4],
+        "name": "Peter Lawrence",
+        "content": "Honestly, I did not expect this to work, but it totally did. Saved my project!",
+        "isApproved": true,
+        "createdAt": "2025-04-22T09:42:00.444Z",
+        "updatedAt": "2025-04-22T10:24:55.626Z",
+        "__v": 0
+    }
+]
 
 export const dashboard_data = {
     "blogs": 10,
@@ -244,16 +203,16 @@ export const dashboard_data = {
 }
 
 export const footer_data = [
-      {
-          title: "Quick Links",
-          links: ["Home", "Best Sellers", "Offers & Deals", "Contact Us", "FAQs"]
-      },
-      {
-          title: "Need Help?",
-          links: ["Delivery Information", "Return & Refund Policy", "Payment Methods", "Track your Order", "Contact Us"]
-      },
-      {
-          title: "Follow Us",
-          links: ["Instagram", "Twitter", "Facebook", "YouTube"]
-      }
-  ];
+    {
+        title: "Quick Links",
+        links: ["Home", "Best Sellers", "Offers & Deals", "Contact Us", "FAQs"]
+    },
+    {
+        title: "Need Help?",
+        links: ["Delivery Information", "Return & Refund Policy", "Payment Methods", "Track your Order", "Contact Us"]
+    },
+    {
+        title: "Follow Us",
+        links: ["Instagram", "Twitter", "Facebook", "YouTube"]
+    }
+];
