@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { ArrowRight, Globe, Search, User, PenLine, LogOut } from 'lucide-react'
+import { ArrowRight, Globe, Search, User, PenLine, LogOut, Shield } from 'lucide-react'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
 
@@ -105,7 +105,12 @@ const Navbar = () => {
                  <Link to='/profile' onClick={() => setShowDropdown(false)} className='flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors'>
                    <User size={16} /> Profile & Settings
                  </Link>
-                 <Link to='/write' onClick={() => setShowDropdown(false)} className='flex items-center gap-3 px-4 py-2.5 text-sm text-[#E5B85C] hover:bg-[#E5B85C]/10 transition-colors'>
+                 {(user.role === 'admin' || user.role === 'writer') && (
+                   <Link to='/editor/dashboard' onClick={() => setShowDropdown(false)} className='flex items-center gap-3 px-4 py-2.5 text-sm text-[#E5B85C] hover:bg-[#E5B85C]/10 transition-colors'>
+                     <Shield size={16} /> Manage Portal (Editor)
+                   </Link>
+                 )}
+                 <Link to='/write' onClick={() => setShowDropdown(false)} className='flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors'>
                    <PenLine size={16} /> Writer Studio
                  </Link>
                  <div className='h-px bg-white/10 my-2'></div>
