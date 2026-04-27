@@ -35,6 +35,7 @@ import CategoriesEditor from './pages/editors/Categories'
 import CommentsModeration from './pages/editors/CommentsModeration'
 import EditorProfile from './pages/editors/EditorProfile'
 import EditorLogin from './pages/editors/EditorLogin'
+import AuthorLogin from './pages/Authors/AuthorLogin'
 
 const App = () => {
   const [loading, setLoading] = useState(true)
@@ -61,6 +62,7 @@ const App = () => {
         <Route path='/write' element={<WriterStudio />} />
         
         {/* Author Routes */}
+        <Route path='/author/login' element={<AuthorLogin />} />
         <Route path='/author/dashboard' element={<AuthorDashboard />} />
         <Route path='/author/create-post' element={<CreatePost />} />
         <Route path='/author/edit-post/:id' element={<EditPost />} />
