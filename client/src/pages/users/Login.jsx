@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
-import { Mail, Lock, User, ArrowRight, Eye, EyeOff, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+import { Mail, Lock, User, ArrowRight, Eye, EyeOff, CheckCircle, AlertCircle, Loader2, ShieldCheck } from 'lucide-react'
 import { AuthContext } from '../../context/AuthContext'
 
 const API = 'http://localhost:5000/api/auth'
@@ -177,9 +177,9 @@ const Login = () => {
                 <div className='flex gap-1.5 mt-1'>
                   {[...Array(4)].map((_, i) => (
                     <div key={i} className={`h-1 flex-1 rounded-full transition-all duration-300 ${password.length >= 12 ? 'bg-green-500' :
-                        password.length >= 8 ? (i < 3 ? 'bg-yellow-400' : 'bg-white/10') :
-                          password.length >= 6 ? (i < 2 ? 'bg-orange-400' : 'bg-white/10') :
-                            (i < 1 ? 'bg-red-400' : 'bg-white/10')
+                      password.length >= 8 ? (i < 3 ? 'bg-yellow-400' : 'bg-white/10') :
+                        password.length >= 6 ? (i < 2 ? 'bg-orange-400' : 'bg-white/10') :
+                          (i < 1 ? 'bg-red-400' : 'bg-white/10')
                       }`} />
                   ))}
                   <span className='text-xs text-gray-500 ml-1'>
@@ -211,8 +211,8 @@ const Login = () => {
             </form>
 
             {/* Switch mode */}
-            <div className='mt-8 text-center'>
-              <p className='text-gray-400 text-sm'>
+            <div className='mt-8 pt-8 border-t border-white/5 text-center'>
+              <p className='text-gray-400 text-sm mb-6'>
                 {isLogin ? "Don't have an account?" : 'Already have an account?'}
                 <button
                   onClick={switchMode}
@@ -221,6 +221,32 @@ const Login = () => {
                   {isLogin ? 'Sign Up' : 'Sign In'}
                 </button>
               </p>
+
+              {/* Demo Access */}
+              {isLogin && (
+                <div className='bg-white/5 rounded-2xl p-4 border border-white/10 space-y-3'>
+                  <p className='text-xs text-gray-500 uppercase tracking-widest font-bold'>Quick Access</p>
+                  <button
+                    type='button'
+                    onClick={() => {
+                      setEmail('sruthi.alex@blogworld.com');
+                      setPassword('password123');
+                    }}
+                    className='w-full py-2.5 rounded-xl border border-[#E5B85C]/30 text-[#E5B85C] text-sm font-semibold hover:bg-[#E5B85C]/10 transition-all flex items-center justify-center gap-2'
+                  >
+                    <User size={14} />
+                    Try as Fair Editor
+                  </button>
+                  <button
+                    type='button'
+                    onClick={() => navigate('/editor/login')}
+                    className='w-full py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-white/10 transition-all flex items-center justify-center gap-2'
+                  >
+                    <ShieldCheck size={14} className='text-[#E5B85C]' />
+                    Go to Editor Portal
+                  </button>
+                </div>
+              )}
             </div>
 
           </div>

@@ -34,6 +34,7 @@ import ScheduledPosts from './pages/editors/ScheduledPosts'
 import CategoriesEditor from './pages/editors/Categories'
 import CommentsModeration from './pages/editors/CommentsModeration'
 import EditorProfile from './pages/editors/EditorProfile'
+import EditorLogin from './pages/editors/EditorLogin'
 
 const App = () => {
   const [loading, setLoading] = useState(true)
@@ -69,6 +70,7 @@ const App = () => {
         <Route path='/author/analytics' element={<PostAnalytics />} />
 
         {/* Editor Routes */}
+        <Route path='/editor/login' element={<EditorLogin />} />
         <Route path='/editor/dashboard' element={<EditorDashboard />} />
         <Route path='/editor/review' element={<ReviewPosts />} />
         <Route path='/editor/pending' element={<PendingPosts />} />

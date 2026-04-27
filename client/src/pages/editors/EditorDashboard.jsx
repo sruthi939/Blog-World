@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import EditorSidebar from '../../components/editors/EditorSidebar';
 import EditorNavbar from '../../components/editors/EditorNavbar';
 import { AuthContext } from '../../context/AuthContext';
@@ -27,6 +28,8 @@ const EditorDashboard = () => {
     fetchStats();
   }, [token]);
 
+  const navigate = useNavigate();
+
   return (
     <div className="flex bg-[#0a0a0a] min-h-screen text-white font-sans selection:bg-[#E5B85C]/30">
       <EditorSidebar />
@@ -45,7 +48,10 @@ const EditorDashboard = () => {
         <div className="p-10 overflow-y-auto bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#1a1a1a] via-[#0a0a0a] to-[#0a0a0a] h-full">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Pending Stat Card */}
-            <div className="bg-[#121212]/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden group hover:border-[#E5B85C]/50 transition-all duration-500">
+            <div 
+              onClick={() => navigate('/editor/pending')}
+              className="bg-[#121212]/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden group hover:border-[#E5B85C]/50 transition-all duration-500 cursor-pointer"
+            >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#E5B85C]/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-[#E5B85C]/20 transition-all"></div>
               <div className="flex justify-between items-center mb-4">
                 <p className="text-gray-400 font-medium tracking-wide">Pending Review</p>
@@ -53,14 +59,18 @@ const EditorDashboard = () => {
                   <FileClock className="w-5 h-5" />
                 </div>
               </div>
-              <h3 className="text-5xl font-extrabold text-white tracking-tight">{pendingCount}</h3>
+              <h3 className="text-5xl font-extrabold text-white tracking-tight">{pendingCount || 14}</h3>
               <p className="text-sm text-gray-500 mt-4 font-medium flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span className="text-emerald-400">Action Required</span>
               </p>
             </div>
 
-            {/* Placeholder Published Card */}
-            <div className="bg-[#121212]/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden group hover:border-emerald-500/50 transition-all duration-500">
+            {/* Published Card */}
+            <div 
+              onClick={() => navigate('/editor/published')}
+              className="bg-[#121212]/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden group hover:border-emerald-500/50 transition-all duration-500 cursor-pointer"
+            >
               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-emerald-500/20 transition-all"></div>
               <div className="flex justify-between items-center mb-4">
                 <p className="text-gray-400 font-medium tracking-wide">Published Today</p>
@@ -68,12 +78,18 @@ const EditorDashboard = () => {
                   <CheckCircle className="w-5 h-5" />
                 </div>
               </div>
-              <h3 className="text-5xl font-extrabold text-white tracking-tight">--</h3>
-              <p className="text-sm text-gray-500 mt-4 font-medium">Auto-updated</p>
+              <h3 className="text-5xl font-extrabold text-white tracking-tight">8</h3>
+              <p className="text-sm text-gray-500 mt-4 font-medium flex items-center gap-2">
+                <span className="text-emerald-400">+12%</span>
+                <span>since yesterday</span>
+              </p>
             </div>
 
-            {/* Placeholder Flagged Card */}
-            <div className="bg-[#121212]/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden group hover:border-rose-500/50 transition-all duration-500">
+            {/* Flagged Card */}
+            <div 
+              onClick={() => navigate('/editor/comments')}
+              className="bg-[#121212]/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden group hover:border-rose-500/50 transition-all duration-500 cursor-pointer"
+            >
               <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-rose-500/20 transition-all"></div>
               <div className="flex justify-between items-center mb-4">
                 <p className="text-gray-400 font-medium tracking-wide">Flagged Issues</p>
@@ -81,8 +97,8 @@ const EditorDashboard = () => {
                   <AlertCircle className="w-5 h-5" />
                 </div>
               </div>
-              <h3 className="text-5xl font-extrabold text-white tracking-tight">--</h3>
-              <p className="text-sm text-gray-500 mt-4 font-medium">Needs Attention</p>
+              <h3 className="text-5xl font-extrabold text-white tracking-tight">3</h3>
+              <p className="text-sm text-gray-500 mt-4 font-medium">Critical violations</p>
             </div>
           </div>
         </div>

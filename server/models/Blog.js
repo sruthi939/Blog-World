@@ -5,8 +5,13 @@ const blogSchema = new mongoose.Schema({
     subTitle: { type: String },
     description: { type: String, required: true },
     category: { type: String, required: true },
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
     image: { type: String },
-    isPublished: { type: Boolean, default: true }
+    isPublished: { type: Boolean, default: false }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Blog', blogSchema);
