@@ -7,5 +7,8 @@ const editorAuth = require('../middleware/editorAuth');
 router.get('/pending', editorAuth, editorController.getPendingPosts);
 router.post('/approve/:id', editorAuth, editorController.approvePost);
 router.post('/reject/:id', editorAuth, editorController.rejectPost);
+router.get('/published', editorAuth, editorController.getPublishedPosts);
+router.get('/categories', editorAuth, editorController.getCategories);
+router.get('/comments', editorAuth, editorController.getComments);
 
 module.exports = router;
