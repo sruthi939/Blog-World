@@ -1,5 +1,5 @@
 import React from 'react';
-import EditorSidebar from '../../components/editor/EditorSidebar';
+import EditorSidebar from '../../components/editors/EditorSidebar';
 
 const CommentsModeration = () => {
   return (
